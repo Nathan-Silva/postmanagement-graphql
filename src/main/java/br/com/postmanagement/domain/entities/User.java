@@ -1,4 +1,4 @@
-package br.com.postmanagement.domain.entity;
+package br.com.postmanagement.domain.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;

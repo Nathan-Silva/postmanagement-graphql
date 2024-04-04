@@ -1,7 +1,7 @@
 package br.com.postmanagement.infra.db.model;
 
-import br.com.postmanagement.domain.entity.Post;
-import br.com.postmanagement.domain.entity.User;
+import br.com.postmanagement.domain.entities.Post;
+import br.com.postmanagement.domain.entities.User;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import lombok.Builder;

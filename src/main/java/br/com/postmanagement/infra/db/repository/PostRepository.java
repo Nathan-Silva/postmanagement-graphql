@@ -1,6 +1,6 @@
 package br.com.postmanagement.infra.db.repository;
 
-import br.com.postmanagement.domain.entity.Post;
+import br.com.postmanagement.domain.entities.Post;
 import br.com.postmanagement.domain.repository.IPostRepository;
 
 import java.util.List;

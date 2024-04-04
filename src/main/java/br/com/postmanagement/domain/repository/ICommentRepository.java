@@ -1,6 +1,6 @@
 package br.com.postmanagement.domain.repository;
 
-import br.com.postmanagement.domain.entity.Comment;
+import br.com.postmanagement.domain.entities.Comment;
 
 import java.util.List;
 

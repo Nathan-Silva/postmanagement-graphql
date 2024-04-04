@@ -1,12 +1,15 @@
 package br.com.postmanagement.infra.db.repository;
 
-import br.com.postmanagement.domain.entity.User;
+import br.com.postmanagement.domain.entities.User;
 import br.com.postmanagement.domain.repository.IUserRepository;
+
+import java.util.Optional;
+import java.util.UUID;
 
 public class UserRepository implements IUserRepository {
 
     @Override
-    public User getUserById(Long userId) {
+    public Optional<User> getUserById(UUID uuid) {
         return null;
     }
 

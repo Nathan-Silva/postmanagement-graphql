@@ -1,6 +1,6 @@
 package br.com.postmanagement.domain.repository;
 
-import br.com.postmanagement.domain.entity.Post;
+import br.com.postmanagement.domain.entities.Post;
 
 import java.util.List;
 import java.util.UUID;
