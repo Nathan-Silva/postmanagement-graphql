@@ -1,4 +1,4 @@
-package br.com.postmanagement;
+package br.com.postmanagement.app.resource;
 
 import org.eclipse.microprofile.graphql.DefaultValue;
 import org.eclipse.microprofile.graphql.Description;
