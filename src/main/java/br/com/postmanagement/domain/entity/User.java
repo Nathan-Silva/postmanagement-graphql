@@ -8,7 +8,7 @@ public class User {
 
     UUID userId;
 
-    String firtName;
+    String firstName;
 
     String lastName;
 
@@ -28,12 +28,12 @@ public class User {
         this.userId = userId;
     }
 
-    public String getFirtName() {
-        return firtName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirtName(String firtName) {
-        this.firtName = firtName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
