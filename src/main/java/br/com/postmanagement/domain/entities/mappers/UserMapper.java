@@ -5,30 +5,31 @@ import br.com.postmanagement.domain.entities.User;
 
 public class UserMapper {
 
-        public static UserDto toDto(User user){
-            return new UserDto(
-                    user.getUserId(),
-                    user.getFirstName(),
-                    user.getLastName(),
-                    user.getDocumentId(),
-                    user.getAge(),
-                    user.getCreated(),
-                    user.getPosts()
-            );
-        }
+    public static UserDto toDto(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setUserId(user.getUserId());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setDocumentId(user.getDocumentId());
+        userDto.setAge(user.getAge());
+        userDto.setCreated(user.getCreated());
+        userDto.setPosts(user.getPosts());
+
+        return userDto;
+    }
 
 
-        public static User toEntity(UserDto userDto){
-            var user =  new User();
-            user.setUserId(userDto.userId());
-            user.setFirstName(userDto.firstName());
-            user.setLastName(userDto.lastName());
-            user.setAge(userDto.age());
-            user.setDocumentId(userDto.documentId());
-            user.setPosts(userDto.posts());
+    public static User toEntity(UserDto userDto) {
+        var user = new User();
+        user.setUserId(userDto.getUserId());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setAge(userDto.getAge());
+        user.setDocumentId(userDto.getDocumentId());
+        user.setPosts(userDto.getPosts());
 
-            return user;
-        }
+        return user;
+    }
 
 
 }

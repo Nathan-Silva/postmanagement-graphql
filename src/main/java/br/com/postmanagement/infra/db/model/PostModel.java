@@ -2,11 +2,12 @@ package br.com.postmanagement.infra.db.model;
 
 import br.com.postmanagement.domain.entities.Comment;
 import br.com.postmanagement.domain.entities.User;
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
+import io.quarkus.mongodb.panache.PanacheMongoEntityBase;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.bson.codecs.pojo.annotations.BsonId;
 
 import java.util.List;
 
@@ -14,8 +15,9 @@ import java.util.List;
 @Builder
 @EqualsAndHashCode(callSuper = true)
 @MongoEntity(collection = "Post")
-public class PostModel extends PanacheMongoEntity {
+public class PostModel extends PanacheMongoEntityBase {
 
+    @BsonId
     Long postId;
 
     User user;

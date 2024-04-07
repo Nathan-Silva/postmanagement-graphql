@@ -1,24 +1,25 @@
 package br.com.postmanagement.infra.db.model;
 
 import br.com.postmanagement.domain.entities.Post;
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
+import io.quarkus.mongodb.panache.PanacheMongoEntityBase;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.bson.codecs.pojo.annotations.BsonId;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
 @MongoEntity(collection = "User")
-public class UserModel extends PanacheMongoEntity {
+public class UserModel extends PanacheMongoEntityBase {
 
-    UUID userId;
+    @BsonId
+    String userId;
 
     String firstName;
 

@@ -2,10 +2,12 @@ package br.com.postmanagement.infra.db.repository;
 
 import br.com.postmanagement.domain.entities.Post;
 import br.com.postmanagement.domain.repository.IPostRepository;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;
 import java.util.UUID;
 
+@ApplicationScoped
 public class PostRepository implements IPostRepository {
     @Override
     public Post createPost(Post post) {

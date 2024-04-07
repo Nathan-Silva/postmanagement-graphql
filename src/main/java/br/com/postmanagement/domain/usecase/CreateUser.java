@@ -15,7 +15,7 @@ public class CreateUser {
     }
 
     public UserDto createUser(UserDto userDto){
-        verifyIfUserExists(userDto.documentId());
+        verifyIfUserExists(userDto.getDocumentId());
 
         var userEntity = UserMapper.toEntity(userDto);
         userEntity.setCreated(LocalDateTime.now());

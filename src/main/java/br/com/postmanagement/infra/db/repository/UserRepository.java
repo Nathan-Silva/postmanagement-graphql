@@ -2,10 +2,13 @@ package br.com.postmanagement.infra.db.repository;
 
 import br.com.postmanagement.domain.entities.User;
 import br.com.postmanagement.domain.repository.IUserRepository;
+import br.com.postmanagement.infra.db.mapper.UserModelMapper;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.Optional;
 import java.util.UUID;
 
+@ApplicationScoped
 public class UserRepository implements IUserRepository {
 
     @Override
@@ -15,7 +18,11 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User saveUser(User user) {
-        return null;
+        var userModel = UserModelMapper.toModel(user);
+
+        userModel.persist();
+
+        return UserModelMapper.toEntity(userModel);
     }
 
     @Override
