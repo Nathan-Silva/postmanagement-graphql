@@ -5,6 +5,7 @@ import br.com.postmanagement.domain.entities.mappers.UserMapper;
 import br.com.postmanagement.domain.repository.IUserRepository;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class CreateUser {
 
@@ -18,6 +19,7 @@ public class CreateUser {
         verifyIfUserExists(userDto.getDocumentId());
 
         var userEntity = UserMapper.toEntity(userDto);
+        userEntity.setUserId(UUID.randomUUID());
         userEntity.setCreated(LocalDateTime.now());
 
         var user = userRepository.saveUser(userEntity);

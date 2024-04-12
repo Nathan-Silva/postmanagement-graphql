@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
-@MongoEntity(collection = "User")
+@MongoEntity(database = "db", collection = "User")
 public class UserModel extends PanacheMongoEntityBase {
 
     @BsonId

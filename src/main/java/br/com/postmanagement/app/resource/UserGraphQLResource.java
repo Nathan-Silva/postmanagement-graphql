@@ -7,7 +7,7 @@ import jakarta.inject.Inject;
 import org.eclipse.microprofile.graphql.*;
 
 @GraphQLApi
-public class UserMutationResource {
+public class UserGraphQLResource {
 
     @Inject
     UserService userService;
@@ -17,9 +17,9 @@ public class UserMutationResource {
         return userService.createUser(createUserRequest);
     }
 
-//
-//    @Query
-//    public String createUser(@Name("nome") String createUserRequest) {
-//        return createUserRequest;
-//    }
+
+    @Query
+    public String createUser(@Name("nome") String createUserRequest) {
+        return createUserRequest;
+    }
 }

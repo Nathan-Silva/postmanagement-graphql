@@ -8,10 +8,10 @@ public class UserAppMapper {
 
     public static UserDto toDto(CreateUserRequest createUserRequest) {
         UserDto userDto = new UserDto();
-//        userDto.setFirstName(createUserRequest.getFirstName());
-//        userDto.setLastName(createUserRequest.getLastName());
-//        userDto.setDocumentId(createUserRequest.getDocumentId());
-//        userDto.setAge(createUserRequest.getAge());
+        userDto.setFirstName(createUserRequest.getFirstName());
+        userDto.setLastName(createUserRequest.getLastName());
+        userDto.setDocumentId(createUserRequest.getDocumentId());
+        userDto.setAge(createUserRequest.getAge());
 
         return userDto;
     }
