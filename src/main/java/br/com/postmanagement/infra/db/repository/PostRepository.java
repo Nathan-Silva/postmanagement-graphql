@@ -2,6 +2,7 @@ package br.com.postmanagement.infra.db.repository;
 
 import br.com.postmanagement.domain.entities.Post;
 import br.com.postmanagement.domain.repository.IPostRepository;
+import br.com.postmanagement.infra.db.mapper.PostModelMapper;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;
@@ -11,7 +12,10 @@ import java.util.UUID;
 public class PostRepository implements IPostRepository {
     @Override
     public Post createPost(Post post) {
-        return null;
+        var postModel = PostModelMapper.toModel(post);
+        postModel.persist();
+
+        return PostModelMapper.toEntity(postModel);
     }
 
     @Override

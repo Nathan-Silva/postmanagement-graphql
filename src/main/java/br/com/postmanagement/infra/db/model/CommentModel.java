@@ -12,7 +12,7 @@ import org.bson.codecs.pojo.annotations.BsonId;
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
-@MongoEntity(collection = "Comment")
+@MongoEntity(database = "db", collection = "Comment")
 public class CommentModel extends PanacheMongoEntityBase {
 
     @BsonId

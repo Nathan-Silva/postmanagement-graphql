@@ -17,6 +17,11 @@ public class UserGraphQLResource {
         return userService.createUser(createUserRequest);
     }
 
+    @Mutation
+    public void deleteUser(String uuid) {
+        userService.deleteUser(uuid);
+    }
+
 
     @Query
     public String createUser(@Name("nome") String createUserRequest) {

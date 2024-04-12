@@ -1,8 +1,11 @@
-package br.com.postmanagement.domain.entities;
+package br.com.postmanagement.domain.entities.dto;
+
+import br.com.postmanagement.domain.entities.Comment;
+import br.com.postmanagement.domain.entities.User;
 
 import java.util.List;
 
-public class Post {
+public class PostDto {
 
     Long postId;
 

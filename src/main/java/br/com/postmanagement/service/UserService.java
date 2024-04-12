@@ -6,13 +6,15 @@ import br.com.postmanagement.domain.entities.User;
 import br.com.postmanagement.domain.entities.dto.UserDto;
 import br.com.postmanagement.domain.repository.IUserRepository;
 import br.com.postmanagement.domain.usecase.CreateUser;
+import br.com.postmanagement.domain.usecase.DeleteUser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Default;
+import jakarta.inject.Inject;
 
 @ApplicationScoped
 public class UserService {
 
-    @Default
+    @Inject
     IUserRepository userRepository;
 
     public UserDto createUser(CreateUserRequest createUserRequest){
@@ -20,4 +22,10 @@ public class UserService {
 
         return createUser.createUser(UserAppMapper.toDto(createUserRequest));
     }
+
+    public void deleteUser(String uuid){
+        var deleteUser = new DeleteUser(userRepository);
+        deleteUser.deleteUser(uuid);
+    }
+
 }

@@ -6,10 +6,20 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-public class UserDto{
-        UUID userId;
-        String firstName;
-        String lastName;
+public class UserDto {
+    UUID userId;
+
+    String firstName;
+
+    String lastName;
+
+    String documentId;
+
+    Integer age;
+
+    LocalDateTime created;
+
+    List<Post> posts;
 
     public UUID getUserId() {
         return userId;
@@ -66,9 +76,4 @@ public class UserDto{
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
-
-    String documentId;
-        Integer age;
-        LocalDateTime created;
-        List<Post>posts;
 }

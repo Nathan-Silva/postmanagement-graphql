@@ -19,7 +19,6 @@ public class UserRepository implements IUserRepository {
     @Override
     public User saveUser(User user) {
         var userModel = UserModelMapper.toModel(user);
-
         userModel.persist();
 
         return UserModelMapper.toEntity(userModel);
@@ -32,6 +31,7 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public void deleteUser(User user) {
-
+        var userModel = UserModelMapper.toModel(user);
+        userModel.delete();
     }
 }

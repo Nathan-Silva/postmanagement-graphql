@@ -14,13 +14,13 @@ import java.util.List;
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
-@MongoEntity(collection = "Post")
+@MongoEntity(database = "db", collection = "Post")
 public class PostModel extends PanacheMongoEntityBase {
 
     @BsonId
     Long postId;
 
-    User user;
+    String userId;
 
     String imageId;
 
