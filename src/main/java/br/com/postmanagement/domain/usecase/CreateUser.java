@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class CreateUser {
 
-    private IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     public CreateUser(IUserRepository userRepository){
         this.userRepository = userRepository;
