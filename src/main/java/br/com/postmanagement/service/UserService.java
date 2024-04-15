@@ -6,8 +6,12 @@ import br.com.postmanagement.domain.entities.dto.UserDto;
 import br.com.postmanagement.domain.repository.IUserRepository;
 import br.com.postmanagement.domain.usecase.CreateUser;
 import br.com.postmanagement.domain.usecase.DeleteUser;
+import br.com.postmanagement.domain.usecase.GetUser;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+
+import java.util.List;
+import java.util.UUID;
 
 @ApplicationScoped
 public class UserService {
@@ -26,4 +30,14 @@ public class UserService {
         deleteUser.deleteUser(uuid);
     }
 
+
+    public UserDto getUserById(String uuid){
+        var getUser = new GetUser(userRepository);
+        return getUser.getUserById(UUID.fromString(uuid));
+    }
+
+    public List<UserDto> getAllUsers() {
+        var getUser = new GetUser(userRepository);
+        return getUser.getAllUsers();
+    }
 }
