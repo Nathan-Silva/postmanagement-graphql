@@ -13,10 +13,8 @@ public class PostGraphQLResource {
     @Inject
     PostService postService;
 
-
     @Mutation
     public PostDto savePost(CreatePostRequest createPostRequest){
         return postService.savePost(createPostRequest);
     }
-
 }
