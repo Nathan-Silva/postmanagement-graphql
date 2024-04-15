@@ -9,21 +9,33 @@ import io.quarkus.mongodb.panache.PanacheQuery;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class UserRepository implements IUserRepository {
 
     @Override
     public Optional<User> getUserByDocumentId(String documentId) {
-        return UserModel.find("documentId", documentId)
-                .stream().map(value -> UserModelMapper.toEntity((UserModel) value)).findFirst();
+        return UserModel.find("documentId", documentId).stream()
+                .map(value -> UserModelMapper.toEntity((UserModel) value))
+                .findFirst();
     }
 
     @Override
     public Optional<User> getUserById(UUID uuid) {
-        return Optional.empty();
+        return UserModel.find("userId", uuid).stream()
+                .map(value -> UserModelMapper.toEntity((UserModel) value))
+                .findFirst();
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return UserModel.findAll().stream()
+                .map(value -> UserModelMapper.toEntity((UserModel) value))
+                .collect(Collectors.toList());
     }
 
     @Override
