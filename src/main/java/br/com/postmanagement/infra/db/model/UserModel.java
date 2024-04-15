@@ -3,9 +3,7 @@ package br.com.postmanagement.infra.db.model;
 import br.com.postmanagement.domain.entities.Post;
 import io.quarkus.mongodb.panache.PanacheMongoEntityBase;
 import io.quarkus.mongodb.panache.common.MongoEntity;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.bson.codecs.pojo.annotations.BsonId;
 
 import java.time.LocalDateTime;
@@ -14,6 +12,8 @@ import java.util.List;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @MongoEntity(database = "db", collection = "User")
 public class UserModel extends PanacheMongoEntityBase {

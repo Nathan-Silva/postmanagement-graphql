@@ -1,8 +1,10 @@
 package br.com.postmanagement.domain.usecase;
 
 import br.com.postmanagement.domain.entities.dto.UserDto;
+import br.com.postmanagement.domain.entities.enums.ErrorCodeEnum;
 import br.com.postmanagement.domain.entities.mappers.UserMapper;
 import br.com.postmanagement.domain.repository.IUserRepository;
+import br.com.postmanagement.domain.utils.exception.UseCaseException;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -29,5 +31,9 @@ public class CreateUser {
 
 
     private void verifyIfUserExists(String documentId){
+        var userExist = userRepository.getUserByDocumentId(documentId);
+
+        if(userExist.isPresent())
+            throw new UseCaseException(ErrorCodeEnum.USER_ALREADY_EXISTS);
     }
 }

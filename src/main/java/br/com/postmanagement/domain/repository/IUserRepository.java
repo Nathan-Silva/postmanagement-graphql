@@ -8,7 +8,8 @@ import java.util.UUID;
 
 public interface IUserRepository {
 
-    Optional<User> getUserById(UUID userId);
+    Optional<User> getUserByDocumentId(String documentId);
+    Optional<User> getUserById(UUID uuid);
 
     User saveUser(User user);
 

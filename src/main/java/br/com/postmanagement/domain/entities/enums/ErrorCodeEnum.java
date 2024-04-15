@@ -1,7 +1,9 @@
 package br.com.postmanagement.domain.entities.enums;
 
 public enum ErrorCodeEnum implements IEnum{
-;
+
+    USER_ALREADY_EXISTS("01", "User already exists", 400),
+    USER_NOT_FOUND("02", "User not found", 404);
     private final String key;
 
     private final String error;

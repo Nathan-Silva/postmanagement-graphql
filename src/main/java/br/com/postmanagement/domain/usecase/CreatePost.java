@@ -16,6 +16,4 @@ public class CreatePost {
         var postEntity = PostMapper.toEntity(postDto);
         return PostMapper.toDto(postRepository.createPost(postEntity));
     }
-
-
 }
