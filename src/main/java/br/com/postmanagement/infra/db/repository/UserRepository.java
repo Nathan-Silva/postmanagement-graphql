@@ -48,7 +48,9 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User updateUser(User user) {
-        return null;
+        var userModel = UserModelMapper.toModel(user);
+        userModel.persistOrUpdate();
+        return UserModelMapper.toEntity(userModel);
     }
 
     @Override
