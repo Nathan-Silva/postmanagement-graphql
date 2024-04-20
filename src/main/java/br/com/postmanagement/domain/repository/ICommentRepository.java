@@ -3,6 +3,7 @@ package br.com.postmanagement.domain.repository;
 import br.com.postmanagement.domain.entities.Comment;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICommentRepository {
 
@@ -12,7 +13,7 @@ public interface ICommentRepository {
 
     List<Comment> getAllCommentByPostId(Long postId);
 
-    Comment getCommentById(Long commentId);
+    Optional<Comment> getCommentById(Long commentId);
 
     void deleteComment(Comment comment);
 }
