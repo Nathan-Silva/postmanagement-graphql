@@ -1,0 +1,49 @@
+type User {
+    userId: ID!
+    firstName: String!
+    lastName: String!
+    documentId: String!
+    age: Int!
+    created: String!
+    posts: [Post!]!
+}
+
+type Post {
+    postId: ID!
+    userId: ID!
+    imageId: String
+    content: String!
+    comments: [Comment!]!
+}
+
+type Comment {
+    commentId: ID!
+    user: User!
+    comment: String!
+    post: Post!
+}
+
+type Query {
+    allUsers: [User!]!
+    userById(userId: ID!): User
+
+    allPosts: [Post!]!
+    postById(postId: ID!): Post
+
+    allComments: [Comment!]!
+    commentById(commentId: ID!): Comment
+}
+
+type Mutation {
+    createUser(firstName: String!, lastName: String!, documentId: String!, age: Int!): User
+    updateUser(userId: ID!, firstName: String, lastName: String, documentId: String, age: Int): User
+    deleteUser(userId: ID!): Boolean
+
+    createPost(userId: ID!, imageId: String, content: String!): Post
+    updatePost(postId: ID!, content: String, imageId: String): Post
+    deletePost(postId: ID!): Boolean
+
+    createComment(userId: ID!, postId: ID!, comment: String!): Comment
+    updateComment(commentId: ID!, comment: String!): Comment
+    deleteComment(commentId: ID!): Boolean
+}
